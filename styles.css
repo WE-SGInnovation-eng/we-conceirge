@@ -1,0 +1,267 @@
+/* =========================================================
+   We. SG — Concierge
+   Tokens and wash lifted from the We. SG design system.
+   ========================================================= */
+
+:root {
+  --we-plum:      #800239;
+  --we-plum-deep: #5A0127;
+  --we-plum-soft: #A33B62;
+  --we-red-deep:  #B81F22;
+  --we-cream:     #FFF4ED;
+  --we-ivory:     #FFFAF3;
+
+  --rule:        rgba(128, 2, 57, 0.18);
+  --rule-strong: rgba(128, 2, 57, 0.45);
+
+  --font-display: "League Gothic", "Oswald", "Impact", sans-serif;
+  --font-serif:   "Playfair Display", "Times New Roman", serif;
+  --font-body:    "Open Sauce Sans", "Inter", system-ui, sans-serif;
+
+  --gutter: clamp(20px, 6vw, 96px);
+  --card-min: 320px;
+}
+
+/* ---------- Fonts ----------
+   Subset to Latin and pinned to the weights and widths the page uses. */
+@font-face {
+  font-family: "League Gothic";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/LeagueGothic-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("fonts/PlayfairDisplay-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/OpenSauceSans-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/OpenSauceSans-Bold.woff2") format("woff2");
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--we-cream);
+  color: var(--we-plum);
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--we-plum); text-decoration: none; }
+a:hover { color: var(--we-plum-soft); }
+
+:focus-visible {
+  outline: 2px solid var(--we-plum);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px var(--gutter);
+  border-bottom: 1px solid var(--rule);
+}
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.site-header__logo {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+}
+.site-header__name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.site-header__date {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* ---------- Hero wash ---------- */
+.hero {
+  border-bottom: 1px solid var(--rule);
+}
+.we-wash {
+  position: relative;
+  min-height: 240px;
+  overflow: hidden;
+  background:
+    radial-gradient(125% 105% at 28% 18%,
+      #F8B89A 0%,
+      #F58A78 14%,
+      #EE5A4A 32%,
+      #E84030 52%,
+      #DC3A22 72%,
+      #C8341B 100%),
+    radial-gradient(60% 70% at 92% 92%,
+      #E8A02266 0%,
+      #E8A02200 70%);
+  background-blend-mode: screen, normal;
+}
+.we-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='1' stitchTiles='stitch' seed='4'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.2 -0.3'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+  opacity: 0.7;
+}
+.hero__title {
+  position: absolute;
+  left: clamp(20px, 4vw, 56px);
+  right: clamp(20px, 4vw, 56px);
+  bottom: clamp(20px, 4vw, 48px);
+  margin: 0;
+  color: var(--we-cream);
+  font-family: var(--font-display);
+  font-weight: 400;
+  /* 88px on desktop, scales down so it never clips inside the 240px wash */
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.9;
+}
+
+/* ---------- Main ---------- */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: clamp(40px, 6vw, 80px) var(--gutter);
+}
+/* ---------- App cards ---------- */
+.apps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--card-min)), 1fr));
+  gap: 24px;
+}
+.apps > li { display: flex; }
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 220px;
+  padding: 28px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--we-ivory);
+  color: var(--we-plum);
+  transition: background 180ms, color 180ms;
+}
+a.card:hover,
+a.card:focus-visible {
+  background: var(--we-plum);
+  color: var(--we-cream);
+}
+.card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 0.92;
+}
+.card__host {
+  font-size: 13px;
+  opacity: 0.8;
+  word-break: break-all;
+}
+
+.card--soon {
+  border: 1px dashed var(--rule-strong);
+  background: transparent;
+}
+.card--soon .card__status { color: var(--we-red-deep); }
+.card--soon .card__name { opacity: 0.55; }
+.card__note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--we-red-deep);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 24px var(--gutter);
+  border-top: 1px solid var(--rule);
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+}
