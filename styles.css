@@ -183,6 +183,7 @@ a:hover { color: var(--we-plum-soft); }
   gap: 32px;
   padding: clamp(40px, 6vw, 80px) var(--gutter);
 }
+
 /* ---------- App cards ---------- */
 .apps {
   list-style: none;
