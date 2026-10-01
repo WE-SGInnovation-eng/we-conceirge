@@ -10,7 +10,7 @@ const APPS = [
   },
   { name: 'SG Dashboard', type: 'Web app', url: 'https://we-sg-dashboard.vercel.app/' },
   { name: 'AI Dashboard', type: 'Web app', url: 'https://we-ai-dashboard.vercel.app/' },
-  { name: 'BD Dashboard' },
+  { name: 'BD Dashboard', type: 'Web app', url: 'https://we-bd-request-app.vercel.app/' },
 ];
 
 // Live apps first, so keys 1–9 map to the numbers shown on the cards.
