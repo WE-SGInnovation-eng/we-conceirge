@@ -1,16 +1,16 @@
 // Add or update apps here. An app without a `url` renders as a "Coming soon" card.
 const APPS = [
-  { name: 'Intelligence Dashboard', type: 'Web app', url: 'https://we-intelligence-dashboard.vercel.app/' },
-  { name: 'Ops Dashboard', type: 'Web app', url: 'https://we-ops-dashboard.vercel.app/' },
+  { name: 'Intelligence Dashboard', type: 'Web app', url: 'https://intel.wesg.app/' },
+  { name: 'Ops Dashboard', type: 'Web app', url: 'https://ops.wesg.app/' },
   {
     name: 'Media Monitoring',
     type: 'Google Sheet',
     url: 'https://docs.google.com/spreadsheets/d/17mG714Fnt_GHt0AmiRw3_OOiDfb0zHvoj8vepvEpw-U/edit?usp=sharing',
     host: 'docs.google.com/spreadsheets',
   },
-  { name: 'SG Dashboard', type: 'Web app', url: 'https://we-sg-dashboard.vercel.app/' },
-  { name: 'AI Dashboard', type: 'Web app', url: 'https://we-ai-dashboard.vercel.app/' },
-  { name: 'BD Dashboard', type: 'Web app', url: 'https://we-bd-request-app.vercel.app/' },
+  { name: 'SG Dashboard', type: 'Web app', url: 'https://sg.wesg.app/' },
+  { name: 'AI Dashboard', type: 'Web app', url: 'https://ai.wesg.app/' },
+  { name: 'BD Dashboard', type: 'Web app', url: 'https://bd.wesg.app/' },
 ];
 
 // Live apps first, so keys 1–9 map to the numbers shown on the cards.
